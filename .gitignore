@@ -37,3 +37,21 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Compiled Java files
+*.class
+
+# IDE files
+.idea/
+
+# Docker logs and temp files
+.docker/
+*.log
+
+# Test Results (We don't want to version control reports)
+test-output/
+ExtentReport.html
+screenshots/
+
+# System files
+Thumbs.db
