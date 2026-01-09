@@ -1,13 +1,11 @@
 services:
-  # This is your Browser "Server"
   chrome-server:
     image: selenium/standalone-chrome:latest
     shm_size: '2gb'
     ports:
       - "4444:4444"
-      - "7900:7900" # This lets you watch the tests!
+      - "7900:7900"
 
-  # This is your Maven code
   automation:
     build: .
     depends_on:
@@ -15,4 +13,4 @@ services:
     environment:
       - SE_REMOTE_URL=http://chrome-server:4444
     volumes:
-      - ./target:/app/target
+      - ./:/app                # Map local project to /app inside container
